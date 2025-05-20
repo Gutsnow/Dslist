@@ -5,33 +5,35 @@ import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "tabela_jogos")
+@Table(name = "tb_game")
 public class Game {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String titulo;
-    @Column(name = "ano_lancamento")
-    private Integer ano;
-    private String genero;
-    private String plataforma;
-    private double avaliacao;
-    private String urlImg;
-    private String descricaoCurta;
-    private String descricaoLonga;
+    private String title;
+    @Column(name = "game_year")
+    private Integer year;
+    private String genre;
+    private String platforms;
+    private double score;
+    private String imgUrl;
+    @Column(columnDefinition = "TEXT")
+    private String shortDescription;
+    @Column(columnDefinition = "TEXT")
+    private String longDescription;
 
     public Game(){}
 
-    public Game(Long id, String titulo, Integer ano, String genero, String plataforma, double avaliacao, String urlImg, String descricaoCurta, String descricaoLonga) {
+    public Game(Long id, String title, Integer year, String genre, String platforms, double score, String imgUrl, String shortDescription, String longDescription) {
         this.id = id;
-        this.titulo = titulo;
-        this.ano = ano;
-        this.genero = genero;
-        this.plataforma = plataforma;
-        this.avaliacao = avaliacao;
-        this.urlImg = urlImg;
-        this.descricaoCurta = descricaoCurta;
-        this.descricaoLonga = descricaoLonga;
+        this.title = title;
+        this.year = year;
+        this.genre = genre;
+        this.platforms = platforms;
+        this.score = score;
+        this.imgUrl = imgUrl;
+        this.shortDescription = shortDescription;
+        this.longDescription = longDescription;
     }
 
     public Long getId() {
@@ -42,72 +44,71 @@ public class Game {
         this.id = id;
     }
 
-    public String getTitulo() {
-        return titulo;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public Integer getAno() {
-        return ano;
+    public Integer getYear() {
+        return year;
     }
 
-    public void setAno(Integer ano) {
-        this.ano = ano;
+    public void setYear(Integer year) {
+        this.year = year;
     }
 
-    public String getGenero() {
-        return genero;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setGenero(String genero) {
-        this.genero = genero;
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
-    public String getPlataforma() {
-        return plataforma;
+    public String getPlatforms() {
+        return platforms;
     }
 
-    public void setPlataforma(String plataforma) {
-        this.plataforma = plataforma;
+    public void setPlatforms(String platforms) {
+        this.platforms = platforms;
     }
 
-    public double getAvaliacao() {
-        return avaliacao;
+    public double getScore() {
+        return score;
     }
 
-    public void setAvaliacao(double avaliacao) {
-        this.avaliacao = avaliacao;
+    public void setScore(double score) {
+        this.score = score;
     }
 
-    public String getUrlImg() {
-        return urlImg;
+    public String getImgUrl() {
+        return imgUrl;
     }
 
-    public void setUrlImg(String urlImg) {
-        this.urlImg = urlImg;
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 
-    public String getDescricaoCurta() {
-        return descricaoCurta;
+    public String getShortDescription() {
+        return shortDescription;
     }
 
-    public void setDescricaoCurta(String descricaoCurta) {
-        this.descricaoCurta = descricaoCurta;
+    public void setShortDescription(String shortDescription) {
+        this.shortDescription = shortDescription;
     }
 
-    public String getDescricaoLonga() {
-        return descricaoLonga;
+    public String getLongDescription() {
+        return longDescription;
     }
 
-    public void setDescricaoLonga(String descricaoLonga) {
-        this.descricaoLonga = descricaoLonga;
+    public void setLongDescription(String longDescription) {
+        this.longDescription = longDescription;
     }
 
-
-//    ------------------------------------------
+    //    ------------------------------------------
 
 
     @Override
